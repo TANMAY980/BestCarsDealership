@@ -1,4 +1,6 @@
+
 {% extends 'base.html' %}
+<pre>{% debug context %}</pre>
 
 {% block title %}Dealership{% endblock %}
 
@@ -21,12 +23,12 @@
         <tbody>
             {% for dealer in dealerships %}
             <tr>
-                <td>{{dealer.id}}</td>
-                <td><a href="{% url 'djangoapp:dealer_details' dealer.id %}">{{dealer.full_name}}</a></td>
-                <td>{{dealer.city}}</td>
-                <td>{{dealer.address}}</td>
-                <td>{{dealer.zip}}</td>
-                <td>{{dealer.state}}</td>
+                <td>{{ dealer.id }}</td>
+                <td><a href="{% url 'djangoapp:dealer_details' dealer.id %}">{{ dealer.full_name }}</a></td>
+                <td>{{ dealer.city }}</td>
+                <td>{{ dealer.address }}</td>
+                <td>{{ dealer.zip }}</td>
+                <td>{{ dealer.state }}</td>
             </tr>
             {% endfor %}
         </tbody>
@@ -34,9 +36,9 @@
 </div>
 <!-- turn-on filter control for the table -->
 <script>
-    $(function(){
-        $('#table').bootstrapTable()
-    })
+  $(function() {
+            $('#table').bootstrapTable()
+  })
 </script>
 
 {% endblock %}
